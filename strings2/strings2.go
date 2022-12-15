@@ -5,11 +5,7 @@ func main() {}
 // Erwartet einen String s und einen Buchstaben c.
 // Prüft, ob c in s vorkommt.
 func Contains(s string, c byte) bool {
-	for i := range s {
-		if s[i] == c {
-			return true
-		}
-	}
+	// TODO
 	return false
 }
 
@@ -18,21 +14,13 @@ func Contains(s string, c byte) bool {
 // Liefert die Länge von s, falls c nicht in s vorkommt.
 // Kommt c mehrfach vor, soll die erste Position geliefert werden.
 func PositionOf(s string, c byte) int {
-	for i := range s {
-		if s[i] == c {
-			return i
-		}
-	}
+	// TODO
 	return len(s)
 }
 
 // Erwartet zwei Strings s und t und prüft, ob t in s als Teilstring vorkommt.
 func ContainsSubstring(s, t string) bool {
-	for i := 0; i < len(s)-len(t)+1; i++ {
-		if s[i:i+len(t)] == t {
-			return true
-		}
-	}
+	// TODO
 	return false
 }
 
@@ -45,17 +33,7 @@ func ContainsSubstring(s, t string) bool {
 // Die Funktion soll true liefern, falls der String korrekt geklammert ist.
 func CheckParentheses(s string) bool {
 	counter := 0
-	for _, c := range s {
-		if c == '(' {
-			counter++
-		}
-		if c == ')' {
-			counter--
-			if counter < 0 {
-				return false
-			}
-		}
-	}
+	// TODO
 	return counter == 0
 }
 
@@ -63,9 +41,7 @@ func CheckParentheses(s string) bool {
 // Liefert einen String, der aus n Kopien von s besteht, die duch sep getrennt werden.
 func ConcatN(s, sep string, n int) string {
 	result := ""
-	for i := 0; i < n-1; i++ {
-		result += s + sep
-	}
+	// TODO
 	return result + s
 }
 
@@ -74,20 +50,6 @@ func ConcatN(s, sep string, n int) string {
 // Strings besteht.
 func Zip(s1, s2 string) string {
 	result := ""
-
-	min := len(s1)
-	if len(s2) < min {
-		min = len(s2)
-	}
-	for i := 0; i < min; i++ {
-		result += string(s1[i]) + string(s2[i])
-	}
-	for i := min; i < len(s1); i++ {
-		result += string(s1[i])
-	}
-	for i := min; i < len(s2); i++ {
-		result += string(s2[i])
-	}
-
+	// TODO
 	return result
 }
