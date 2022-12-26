@@ -5,6 +5,8 @@ func main() {}
 // Erwartet einen String s und einen Buchstaben c.
 // Prüft, ob c in s vorkommt.
 func Contains(s string, c byte) bool {
+	// Hinweis: Prüfen Sie in einer Schleife für jedes Zeichen in s, ob es gleich c ist.
+	// Falls ja, können Sie true liefern ("Early Out"), ansonsten liefern Sie am Ende false.
 	// TODO
 	return false
 }
@@ -14,13 +16,20 @@ func Contains(s string, c byte) bool {
 // Liefert die Länge von s, falls c nicht in s vorkommt.
 // Kommt c mehrfach vor, soll die erste Position geliefert werden.
 func PositionOf(s string, c byte) int {
+	// Hinweis: Gehen Sie wie bei Contains vor, aber führen Sie zusätzlich einen
+	// Schleifenzähler mit, dessen Wert Sie im Fall einer Fundstelle von c liefern.
 	// TODO
 	return len(s)
 }
 
 // Erwartet zwei Strings s und t und prüft, ob t in s als Teilstring vorkommt.
 func ContainsSubstring(s, t string) bool {
-	// TODO
+	// Hinweis: Verwenden Sie eine "Slice", um einen Teilstring von s zu gewinnen.
+	// Beispiel: s[3:6] würde Ihnen die Zeichen aus s von 3 bis 5 liefern.
+	// Vergleichen Sie solche Teilstrings in einer Schleife mit t.
+	for i := 0; i < len(s)-len(t)+1; i++ {
+		// TODO: Vergleichen Sie das s-Teilstück von i bis i+len(t) mit t.
+	}
 	return false
 }
 
@@ -32,6 +41,11 @@ func ContainsSubstring(s, t string) bool {
 // passende öffnende Klammer gegeben hat.
 // Die Funktion soll true liefern, falls der String korrekt geklammert ist.
 func CheckParentheses(s string) bool {
+	// Hinweis: Laufen Sie in einer Schleife über s.
+	// Erhöhen Sie einen Klammer-Zähler um 1, wenn Sie eine öffnende Klammer sehen,
+	// und verringern Sie ihn, wenn Sie eine schließende Klammer sehen.
+	// Falls der Zähler jemals negativ wird oder am Ende nicht 0 ist,
+	// liefern Sie false.
 	counter := 0
 	// TODO
 	return counter == 0
@@ -40,6 +54,8 @@ func CheckParentheses(s string) bool {
 // Erwartet zwei Strings s und sep sowie eine Zahl n.
 // Liefert einen String, der aus n Kopien von s besteht, die duch sep getrennt werden.
 func ConcatN(s, sep string, n int) string {
+	// Hinweis: Schreiben Sie eine Schleife mit n-1 Durchläufen, die jedes Mal s und sep
+	// an das Ergebnis anhängt. Am Ende müssen Sie noch ein weiteres Mal s anhängen.
 	result := ""
 	// TODO
 	return result + s
@@ -49,7 +65,17 @@ func ConcatN(s, sep string, n int) string {
 // Liefert einen String, der abwechselnd aus den Buchstaben des einen und des anderen
 // Strings besteht.
 func Zip(s1, s2 string) string {
+	// Hinweis: Es ist Code vorgegeben, der die minimale Länge von s1 und s2 bestimmt.
+	// Schreiben Sie eine Schleife, die bis zu diesem min läuft und in jedem Durchlauf
+	// jeweils ein Zeichen aus s1 und eines aus s2 ans Ergebnis anhängt.
+	// Hängen Sie anschließend noch die beiden restlichen Strings an.
 	result := ""
+
+	min := len(s1)
+	if len(s2) < min {
+		min = len(s2)
+	}
 	// TODO
+
 	return result
 }
